@@ -8,12 +8,25 @@
     box-shadow: 7px 13px 37px #000;
 }
 
+.margin-center{
+    text-align: left;
+}
+
+.margin-top-1{
+    margin-top: 1.5%;
+}
+
 .margin-top-9{
     margin-top: 9%;
 }
 
 .margin-top-20{
     margin-top: 20%;
+}
+
+.margin-right{
+
+    text-align: right;
 }
 
 .margin-left-1{
@@ -26,14 +39,10 @@
     margin-left: 2%;
 }
 
-.margin-bottom-4{
-    margin-bottom: 4%;
-}
-
 .margin-bottom-20{
     margin-bottom: 20%;
 }
 
-.margin-bottom-23{
-    margin-bottom: 23%;
+.margin-bottom-24{
+    margin-bottom: 24%;
 }

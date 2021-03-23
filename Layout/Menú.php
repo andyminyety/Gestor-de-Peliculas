@@ -30,7 +30,6 @@
 NEW;
 
     echo $header;
-
     }
 
     function PrintFooter($isRoot = false){
@@ -39,8 +38,7 @@ NEW;
 
         $footer = <<<NEW
 
-        </main>      
-    
+        </main>         
         <script src="{$directory}assets/JavaScript/bootstrap/bootstrap.min.js"></script>
     </body>
     </html>

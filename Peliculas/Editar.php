@@ -35,7 +35,7 @@ if (isset($_GET["id"])) {
         <h2>No existe esta Pelicula</h2>
     <?php else : ?>
 
-        <div class="modal-dialog shadows">
+    <div class="modal-dialog shadows">
         <div class="modal-content margin-top-20">
             <div class="modal-header bg-dark">
                 <h5 class="modal-title text-white" id="NuevaPelisLabel">Editar Película</h5>
@@ -72,12 +72,11 @@ if (isset($_GET["id"])) {
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">Activo/Inactivo</label>
                         </div>
-                    </div>
-            <button type="submit" class="btn btn-warning float-end margin-left-1">Guardar</button>
-            <a href="../index.php" class="btn btn-dark float-end margin-left-1">Volver atras</a></button>
-            </form>
+                    <button type="submit" class="btn btn-warning float-end margin-left-1">Guardar</button>
+                    <a href="../index.php" class="btn btn-dark float-end margin-left-1">Volver atras</a></button>
+                </form>
+            </div>
         </div>
-    </div>
     </div>
 
     <?php endif; ?>
