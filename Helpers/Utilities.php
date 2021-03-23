@@ -2,14 +2,12 @@
 
     $Generos = [1=> "Acción", 2=>"Terror", 3=>"Comedia", 4=>" Suspenso", 5=>" Documentales"];
  
-
     function GetLastPelis($list){
 
         $countList = count($list);
         $LastPelis = $list[$countList -1];
 
         return $LastPelis;
-
     }
 
     function SearchProperty($list, $property, $value){
@@ -46,6 +44,7 @@
                 $index = $key;
             }
         }
+        
         return $index; 
     }
 ?>
