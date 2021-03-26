@@ -2,7 +2,7 @@
 
     function PrintHeader($isRoot = false){
 
-        $directory = ($isRoot) ? "" : "../";
+        $Directory = ($isRoot) ? "" : "../";
 
         $header = <<<NEW
 
@@ -14,15 +14,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peliculas</title>
 
-    <link rel="stylesheet" href="{$directory}assets/CSS/style.css">
-    <link rel="stylesheet" href="{$directory}assets/CSS/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="{$Directory}assets/CSS/style.css">
+    <link rel="stylesheet" href="{$Directory}assets/CSS/bootstrap/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/597ca9d7c7.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <nav class="navbar navbar-dark bg-warning fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand text-dark" href="{$directory}index.php"><h2><strong><i class="fas fa-film h2"></i> MoviesPlus</strong></h2></a>
+            <a class="navbar-brand text-dark" href="{$Directory}index.php"><h2><strong><i class="fas fa-film h2"></i> MoviesPlus</strong></h2></a>
         </div>
     </nav>
     <main class="container margin-top-9">
@@ -34,12 +34,12 @@ NEW;
 
     function PrintFooter($isRoot = false){
 
-        $directory = ($isRoot) ? "" : "../";
+        $Directory = ($isRoot) ? "" : "../";
 
         $footer = <<<NEW
 
         </main>         
-        <script src="{$directory}assets/JavaScript/bootstrap/bootstrap.min.js"></script>
+        <script src="{$Directory}assets/JavaScript/bootstrap/bootstrap.min.js"></script>
     </body>
     </html>
 
@@ -47,3 +47,5 @@ NEW;
 
     echo $footer;
     }
+
+?>

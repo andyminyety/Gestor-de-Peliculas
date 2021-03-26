@@ -1,4 +1,5 @@
 <?php
+
 include '../Helpers/Utilities.php';
 include 'ServiceSession.php';
 
@@ -18,4 +19,5 @@ if(isset($_GET['id'])){
 }
 header("Location: ../index.php");
 exit();
+
 ?>

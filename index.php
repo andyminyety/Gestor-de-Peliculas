@@ -1,4 +1,5 @@
 <?php
+
 include 'Helpers/Utilities.php';
 include 'Peliculas/ServiceSession.php';
 include 'Layout/Menú.php';
@@ -12,6 +13,7 @@ if(!empty($Películas)){
         $Películas = SearchProperty($Películas,'GeneroId',$_GET['GeneroId']);
     }
 }
+
 ?>
 
 <?php echo PrintHeader(true); ?>
@@ -19,7 +21,7 @@ if(!empty($Películas)){
 <div class="row">
     <div class="col-md-10">
         <div>
-            <div class="col-md-0 margin-center">
+            <div class="col-md-0 margin-left">
                 <div class="btn-group">
                     <a class="btn btn-dark"><strong>Filtrar por:</strong></a>
                     <a href="index.php" class="btn btn-warning"><strong>Todos</strong></a>
@@ -50,12 +52,16 @@ if(!empty($Películas)){
                 <div class="card shadows">
                     <div class="modal-header text-white bg-dark">
                         <h5 class="modal-title h4" id="NuevaPelisLabel">Película</h5>
-                    </div>
+                    </div class="modal-title">
                     <div class="card-body">
                         <h5 class="card-title"><?= $Pelis['Nombre'] ?></h5>
                         <p class="card-text"><?= $Pelis['Descripción'] ?></p>
                         <h6 class="card-text"><?php echo $Generos[$Pelis["GeneroId"]] ?></h6>
-                        <h6 class="text-success margin-right">Activo</h6>
+                        <?php if($Pelis['Status']=="Inactivo") :?>
+                            <h6 class="text-danger margin-right"><?= $Pelis['Status'] ?></h6>
+                        <?php else : ?>
+                            <h6 class="text-success margin-right"><?= $Pelis['Status'] ?></h6>
+                        <?php endif; ?>
                         <a href="Peliculas/Editar.php?id=<?= $Pelis['id']?>" class="btn btn-warning float-end margin-left-2 margin-top-1">Editar</a>
                         <a href="Peliculas/Eliminar.php?id=<?= $Pelis['id']?>" class="btn btn-dark float-end margin margin-left-1 margin-top-1">Eliminar</a>
                     </div>
@@ -94,6 +100,10 @@ if(!empty($Películas)){
                                 <option value="<?php echo $value; ?>"> <?= $text ?> </option>
                             <?php endforeach; ?>
                         </select>
+                        </select>
+                    </div>
+                    <div class="form-check" style="display: none;">
+                        <input name="Estatus" class="form-check-input" type="checkbox" value="Activo" id="flexCheckChecked" checked>
                     </div>
 
                     <div class="mb-3">

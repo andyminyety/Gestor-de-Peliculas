@@ -1,4 +1,5 @@
 <?php
+
 include '../Layout/Menú.php';
 include '../Helpers/Utilities.php';
 include 'ServiceSession.php';
@@ -8,9 +9,10 @@ if (isset($_GET["id"])) {
 
     $Pelis = GetById($_GET["id"]);
 
-    if(isset($_POST["PelisNombre"]) && isset($_POST["PelisDescripcion"]) && isset($_POST["GeneroId"])){
+    if(isset($_POST["PelisNombre"]) && isset($_POST["PelisDescripcion"]) && isset($_POST["GeneroId"]) && isset($_POST["Estatus"])){
 
-        $Pelis = ["id"=> $_GET["id"], "Nombre"=>$_POST["PelisNombre"],"Descripción"=>$_POST["PelisDescripcion"],"GeneroId"=>$_POST["GeneroId"]];
+        $Pelis = ["id"=> $_GET["id"], "Nombre"=>$_POST["PelisNombre"],"Descripción"=>$_POST["PelisDescripcion"],"GeneroId"=>$_POST["GeneroId"],
+        "Status"=>$_POST["Estatus"]];
         Editar($Pelis);
 
         header("Location: ../index.php");
@@ -18,6 +20,7 @@ if (isset($_GET["id"])) {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,10 +71,16 @@ if (isset($_GET["id"])) {
                         <?php endforeach; ?>
                         </select>
                     <div class="mb-3"></div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">Activo/Inactivo</label>
-                        </div>
+                    <div class="form-check" style="display: none;">
+                        <input name="Estatus" class="form-check-input text-danger" type="checkbox" value="Inactivo" id="flexCheckDefault1" checked>
+                        <label class="form-check-label" for="flexCheckDefault1">Inactivo</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input name="Estatus" class="form-check-input text-success" type="checkbox" value="Activo" id="flexCheckDefault2" checked>
+                        <label class="form-check-label" for="flexCheckDefault2">Activo</label>
+                    </div> 
+
                     <button type="submit" class="btn btn-warning float-end margin-left-1">Guardar</button>
                     <a href="../index.php" class="btn btn-dark float-end margin-left-1">Volver atras</a></button>
                 </form>

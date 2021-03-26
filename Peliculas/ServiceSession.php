@@ -9,11 +9,12 @@
         $Películas = GetList();
 
         if(count($Películas) == 0){
+
             $item["id"] = 1;
+
         }else{
 
             $LastPelis = GetLastPelis($Películas);
-
             $item["id"] = $LastPelis["id"] + 1;
         }      
 
